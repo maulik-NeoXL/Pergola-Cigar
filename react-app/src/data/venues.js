@@ -6,6 +6,20 @@ export const hostCities = [
     city: 'New York / New Jersey',
     hotel: 'Marriott Marquis Times Square & Essex House',
     tags: ['4 Venues', 'Final City'],
+    pergolas: [
+      { name: 'Marriott Marquis Times Square', address: '1535 Broadway, New York, NY 10036', capacity: '120 guests', type: 'Rooftop Pergola' },
+      { name: 'The Essex House', address: '160 Central Park S, New York, NY 10019', capacity: '80 guests', type: 'Garden Pergola' },
+      { name: 'Sheraton New York Times Square', address: '811 7th Ave, New York, NY 10019', capacity: '100 guests', type: 'Terrace Pergola' },
+      { name: 'W Hoboken', address: '225 River St, Hoboken, NJ 07030', capacity: '60 guests', type: 'Waterfront Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'Perched above the iconic Times Square skyline, the New York Pergola Lounge offers an unparalleled cigar experience in the city that never sleeps. With breathtaking views of Manhattan, this venue blends classic New York sophistication with the finest curated cigar selections and premium spirits.',
+      hours: '5:00 PM – 2:00 AM',
+      dressCode: 'Smart Casual / Business',
+      capacity: '120 seated, 200 cocktail',
+      amenities: ['Premium Cigar Humidor', 'Rooftop Terrace', 'Private VIP Cabanas', 'Live Jazz Evenings', 'Full-Service Bar', 'Valet Parking'],
+      highlights: ['Skyline panoramic views', 'Exclusive World Cup screening lounge', 'Signature cocktail pairings'],
+    },
   },
   {
     cityClass: 'vv-la',
@@ -14,6 +28,21 @@ export const hostCities = [
     city: 'Los Angeles',
     hotel: 'JW Marriott L.A. LIVE & Manhattan Beach',
     tags: ['5 Venues', 'Semi-Final'],
+    pergolas: [
+      { name: 'JW Marriott L.A. LIVE', address: '900 W Olympic Blvd, Los Angeles, CA 90015', capacity: '150 guests', type: 'Rooftop Pergola' },
+      { name: 'Marriott Manhattan Beach', address: '1400 Parkview Ave, Manhattan Beach, CA 90266', capacity: '90 guests', type: 'Oceanview Pergola' },
+      { name: 'The Ritz-Carlton, Los Angeles', address: '900 W Olympic Blvd, Los Angeles, CA 90015', capacity: '100 guests', type: 'Sky Pergola' },
+      { name: 'Westin Bonaventure', address: '404 S Figueroa St, Los Angeles, CA 90071', capacity: '110 guests', type: 'Courtyard Pergola' },
+      { name: 'Le Méridien Delfina', address: '530 Pico Blvd, Santa Monica, CA 90405', capacity: '70 guests', type: 'Garden Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'The Los Angeles Pergola Lounge captures the essence of Hollywood glamour under the California sun. Set within the vibrant L.A. LIVE entertainment district, guests enjoy open-air cigar lounging with poolside ambiance, artisan cocktails, and world-class service beneath a canopy of twinkling lights.',
+      hours: '4:00 PM – 1:00 AM',
+      dressCode: 'Resort Elegant',
+      capacity: '150 seated, 250 cocktail',
+      amenities: ['Poolside Lounge Area', 'Walk-In Humidor', 'Celebrity Chef Bites', 'Sunset DJ Sets', 'Full-Service Bar', 'Complimentary Wi-Fi'],
+      highlights: ['Open-air poolside setting', 'Post-match FIFA viewing parties', 'Curated tasting flights'],
+    },
   },
   {
     cityClass: 'vv-dal',
@@ -22,6 +51,20 @@ export const hostCities = [
     city: 'Dallas',
     hotel: 'JW Marriott Arts District & Westin Galleria',
     tags: ['4 Venues', 'Group + Knockouts'],
+    pergolas: [
+      { name: 'JW Marriott Dallas Arts District', address: '2000 Ross Ave, Dallas, TX 75201', capacity: '130 guests', type: 'Terrace Pergola' },
+      { name: 'Westin Galleria Dallas', address: '13340 Dallas Pkwy, Dallas, TX 75240', capacity: '100 guests', type: 'Garden Pergola' },
+      { name: 'The Ritz-Carlton, Dallas', address: '2121 McKinney Ave, Dallas, TX 75201', capacity: '80 guests', type: 'Rooftop Pergola' },
+      { name: 'Renaissance Dallas Hotel', address: '2222 N Stemmons Fwy, Dallas, TX 75207', capacity: '90 guests', type: 'Courtyard Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'Deep in the heart of Texas, the Dallas Pergola Lounge delivers a bold and refined cigar experience within the thriving Arts District. The venue merges Southern hospitality with contemporary luxury, featuring hand-rolled cigar stations, bourbon-forward cocktails, and a warm, inviting terrace.',
+      hours: '5:00 PM – 12:00 AM',
+      dressCode: 'Smart Casual',
+      capacity: '130 seated, 180 cocktail',
+      amenities: ['Hand-Rolling Station', 'Bourbon & Whiskey Library', 'Private Event Rooms', 'Outdoor Fire Pits', 'Full-Service Bar', 'Valet Parking'],
+      highlights: ['Texas craft bourbon pairings', 'Live match screenings on terrace', 'Members-only cigar vault'],
+    },
   },
   {
     cityClass: 'vv-mia',
@@ -30,6 +73,20 @@ export const hostCities = [
     city: 'Miami',
     hotel: 'JW Marriott Marquis & Renaissance Brickell',
     tags: ['4 Venues', 'Quarter-Final'],
+    pergolas: [
+      { name: 'JW Marriott Marquis Miami', address: '255 Biscayne Blvd Way, Miami, FL 33131', capacity: '140 guests', type: 'Rooftop Pergola' },
+      { name: 'Renaissance Brickell', address: '1501 SW 2nd Ave, Miami, FL 33129', capacity: '90 guests', type: 'Poolside Pergola' },
+      { name: 'The Ritz-Carlton, South Beach', address: '1 Lincoln Rd, Miami Beach, FL 33139', capacity: '100 guests', type: 'Beachfront Pergola' },
+      { name: 'W South Beach', address: '2201 Collins Ave, Miami Beach, FL 33139', capacity: '75 guests', type: 'Ocean Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'The Miami Pergola Lounge brings tropical sophistication to the Brickell waterfront. With ocean breezes, lush greenery, and Latin-inspired flair, this venue offers an immersive cigar experience paired with mojitos, rum flights, and an atmosphere that pulses with the energy of the Magic City.',
+      hours: '4:00 PM – 2:00 AM',
+      dressCode: 'Resort Chic',
+      capacity: '140 seated, 220 cocktail',
+      amenities: ['Waterfront Terrace', 'Tropical Cocktail Bar', 'Cuban Cigar Selection', 'Latin Live Music', 'Private Cabanas', 'Valet Parking'],
+      highlights: ['Biscayne Bay sunset views', 'Cuban heritage cigar experiences', 'FIFA quarter-final watch parties'],
+    },
   },
   {
     cityClass: 'vv-sf',
@@ -38,6 +95,21 @@ export const hostCities = [
     city: 'San Francisco',
     hotel: 'JW Marriott Union Square & SF Marquis',
     tags: ['5 Venues', 'Group Stage'],
+    pergolas: [
+      { name: 'JW Marriott Union Square', address: '515 Mason St, San Francisco, CA 94102', capacity: '110 guests', type: 'Rooftop Pergola' },
+      { name: 'San Francisco Marriott Marquis', address: '780 Mission St, San Francisco, CA 94103', capacity: '120 guests', type: 'Terrace Pergola' },
+      { name: 'The Palace Hotel', address: '2 New Montgomery St, San Francisco, CA 94105', capacity: '85 guests', type: 'Garden Court Pergola' },
+      { name: 'Westin St. Francis', address: '335 Powell St, San Francisco, CA 94102', capacity: '95 guests', type: 'Courtyard Pergola' },
+      { name: 'Le Méridien San Francisco', address: '333 Battery St, San Francisco, CA 94111', capacity: '70 guests', type: 'Urban Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'Nestled in the heart of Union Square, the San Francisco Pergola Lounge combines Pacific Coast elegance with world-class cigar culture. Featuring fog-kissed terraces and Napa-inspired wine pairings, this intimate venue offers a refined retreat amidst the city by the bay.',
+      hours: '5:00 PM – 12:00 AM',
+      dressCode: 'Smart Casual',
+      capacity: '110 seated, 170 cocktail',
+      amenities: ['Napa Wine & Cigar Pairings', 'Heated Terrace', 'Private Tasting Room', 'Artisan Small Plates', 'Full-Service Bar', 'Concierge Service'],
+      highlights: ['Golden Gate Bridge views', 'Wine country cigar pairings', 'Group stage match screenings'],
+    },
   },
   {
     cityClass: 'vv-bos',
@@ -46,5 +118,53 @@ export const hostCities = [
     city: 'Boston',
     hotel: 'Marriott Copley Place & Long Wharf',
     tags: ['4 Venues', 'Group Stage'],
+    pergolas: [
+      { name: 'Boston Marriott Copley Place', address: '110 Huntington Ave, Boston, MA 02116', capacity: '100 guests', type: 'Terrace Pergola' },
+      { name: 'Boston Marriott Long Wharf', address: '296 State St, Boston, MA 02109', capacity: '80 guests', type: 'Harbor Pergola' },
+      { name: 'The Westin Copley Place', address: '10 Huntington Ave, Boston, MA 02116', capacity: '90 guests', type: 'Rooftop Pergola' },
+      { name: 'Renaissance Boston Waterfront', address: '606 Congress St, Boston, MA 02210', capacity: '85 guests', type: 'Waterfront Pergola' },
+    ],
+    pergolaDetail: {
+      description: 'The Boston Pergola Lounge blends historic New England charm with modern luxury along the iconic waterfront. Overlooking Boston Harbor, guests enjoy curated cigar selections, craft cocktails inspired by the city\'s colonial heritage, and a warm, club-like atmosphere.',
+      hours: '5:00 PM – 12:00 AM',
+      dressCode: 'Smart Casual / Business',
+      capacity: '100 seated, 160 cocktail',
+      amenities: ['Harbor Terrace', 'Craft Cocktail Program', 'Private Club Room', 'Fireplace Lounge', 'Full-Service Bar', 'Valet Parking'],
+      highlights: ['Boston Harbor waterfront views', 'New England craft spirits', 'Intimate match-day atmosphere'],
+    },
   },
+]
+
+export const pergolaEntries = [
+  { cityClass: 'vv-ny', city: 'New York / New Jersey', venue: 'Times Square Rooftop Pergola', placeTag: 'Midtown', venueTag: 'Rooftop', description: 'An elevated cigar lounge atop the Marriott Marquis with sweeping views of Times Square\'s neon lights and the Manhattan skyline. Features a retractable glass canopy, premium humidor, and dedicated sommelier service.', capacity: '120 guests', hours: '5 PM – 2 AM', amenities: ['Retractable Glass Canopy', 'Premium Humidor', 'Sommelier Service', 'Live Jazz'] },
+  { cityClass: 'vv-ny', city: 'New York / New Jersey', venue: 'Essex House Skyline Pergola', placeTag: 'Central Park South', venueTag: 'Skyline Deck', description: 'Overlooking Central Park from the iconic Essex House, this intimate skyline pergola offers a serene escape with hand-rolled cigars, vintage port selections, and unobstructed park views.', capacity: '80 guests', hours: '5 PM – 12 AM', amenities: ['Central Park Views', 'Hand-Rolling Station', 'Vintage Port Bar', 'Heated Seating'] },
+  { cityClass: 'vv-ny', city: 'New York / New Jersey', venue: 'Hudson River Lounge Pergola', placeTag: 'Hudson Yards', venueTag: 'Lounge Terrace', description: 'A sleek waterfront lounge at Hudson Yards with panoramic river views. Modern pergola design with ambient lighting, curated cocktails, and a rotating selection of rare cigars.', capacity: '100 guests', hours: '4 PM – 1 AM', amenities: ['Waterfront Setting', 'Cocktail Program', 'Rare Cigar Selection', 'Ambient Lighting'] },
+  { cityClass: 'vv-ny', city: 'New York / New Jersey', venue: 'Liberty View Match Pergola', placeTag: 'Jersey Waterfront', venueTag: 'Matchday Lounge', description: 'Set along the Jersey City waterfront with Statue of Liberty views, this matchday-focused pergola features large outdoor screens, stadium seating, and a lively atmosphere for every kick-off.', capacity: '150 guests', hours: '3 PM – 1 AM', amenities: ['Outdoor Match Screens', 'Liberty Views', 'Stadium Seating', 'Craft Beer Selection'] },
+
+  { cityClass: 'vv-la', city: 'Los Angeles', venue: 'L.A. LIVE Match Pergola', placeTag: 'Downtown', venueTag: 'Event Terrace', description: 'The flagship L.A. pergola in the heart of the entertainment district. A sprawling terrace with multiple screening zones, VIP cabanas, and an open-air cigar bar steps from Crypto.com Arena.', capacity: '200 guests', hours: '4 PM – 2 AM', amenities: ['Multiple Screening Zones', 'VIP Cabanas', 'Open-Air Cigar Bar', 'Celebrity Chef Menu'] },
+  { cityClass: 'vv-la', city: 'Los Angeles', venue: 'Hollywood Hills Pergola Bar', placeTag: 'Hollywood', venueTag: 'Bar Pergola', description: 'Nestled in the Hollywood Hills with city-wide views, this boutique pergola bar offers an exclusive, reservation-only experience with rare cigar pairings and craft cocktails.', capacity: '60 guests', hours: '6 PM – 1 AM', amenities: ['City Panorama', 'Reservation Only', 'Rare Cigar Pairings', 'Craft Cocktails'] },
+  { cityClass: 'vv-la', city: 'Los Angeles', venue: 'Santa Monica Sunset Pergola', placeTag: 'Westside', venueTag: 'Sunset Deck', description: 'A beachside sunset deck where the Pacific Ocean meets premium cigar culture. Watch the California sunset while enjoying ocean breezes, fresh seafood, and hand-selected blends.', capacity: '90 guests', hours: '4 PM – 12 AM', amenities: ['Ocean Sunset Views', 'Beachside Seating', 'Fresh Seafood Menu', 'Hand-Selected Blends'] },
+  { cityClass: 'vv-la', city: 'Los Angeles', venue: 'Manhattan Beach Club Pergola', placeTag: 'South Bay', venueTag: 'Beach Lounge', description: 'A relaxed South Bay beach club pergola with sand-level seating, tiki-inspired cocktails, and a casual yet refined cigar lounge atmosphere perfect for pre-match gatherings.', capacity: '75 guests', hours: '3 PM – 11 PM', amenities: ['Beachfront Location', 'Tiki Cocktails', 'Sand-Level Seating', 'Casual Atmosphere'] },
+  { cityClass: 'vv-la', city: 'Los Angeles', venue: 'Beverly Matchday Pergola', placeTag: 'Beverly Area', venueTag: 'VIP Pergola', description: 'The most exclusive pergola in L.A., located in the Beverly Hills corridor. White-glove service, ultra-premium cigars, champagne pairings, and a members-only match viewing suite.', capacity: '50 guests', hours: '5 PM – 1 AM', amenities: ['White-Glove Service', 'Ultra-Premium Cigars', 'Champagne Pairings', 'Members Suite'] },
+
+  { cityClass: 'vv-dal', city: 'Dallas', venue: 'Arts District Signature Pergola', placeTag: 'Arts District', venueTag: 'Signature Deck', description: 'The signature Dallas pergola set within the vibrant Arts District. Features Texas-scale outdoor spaces, live country-blues performances, and a bourbon library with over 200 selections.', capacity: '130 guests', hours: '5 PM – 1 AM', amenities: ['Bourbon Library', 'Live Music', 'Texas BBQ Menu', 'Outdoor Fire Pits'] },
+  { cityClass: 'vv-dal', city: 'Dallas', venue: 'Uptown Skyline Pergola', placeTag: 'Uptown', venueTag: 'Sky Lounge', description: 'A modern sky lounge in Dallas Uptown with floor-to-ceiling views and a contemporary cigar program featuring emerging craft blends alongside classic favorites.', capacity: '100 guests', hours: '5 PM – 12 AM', amenities: ['Skyline Views', 'Contemporary Cigar Program', 'Craft Blends', 'Rooftop Pool Adjacent'] },
+  { cityClass: 'vv-dal', city: 'Dallas', venue: 'Victory Park Match Pergola', placeTag: 'Victory Park', venueTag: 'Match Terrace', description: 'Steps from the American Airlines Center, this match-focused terrace features massive LED screens, stadium-style seating, and a game-day energy that captures the spirit of Texas football culture.', capacity: '180 guests', hours: '3 PM – 1 AM', amenities: ['Giant LED Screens', 'Stadium Seating', 'Game-Day Atmosphere', 'Texas Craft Beers'] },
+  { cityClass: 'vv-dal', city: 'Dallas', venue: 'Galleria Club Pergola', placeTag: 'North Dallas', venueTag: 'Club Pergola', description: 'An upscale club pergola in North Dallas offering a refined retreat with private smoking rooms, a walk-in humidor, and personalized cigar concierge services.', capacity: '80 guests', hours: '5 PM – 12 AM', amenities: ['Private Smoking Rooms', 'Walk-In Humidor', 'Cigar Concierge', 'Fine Dining'] },
+
+  { cityClass: 'vv-mia', city: 'Miami', venue: 'Biscayne Bay Pergola', placeTag: 'Biscayne Bay', venueTag: 'Bayfront Lounge', description: 'A stunning bayfront lounge with direct Biscayne Bay views. Tropical landscaping, water features, and a Cuban-inspired cigar menu create an authentic Miami experience.', capacity: '140 guests', hours: '4 PM – 2 AM', amenities: ['Bay Views', 'Tropical Landscaping', 'Cuban Cigar Menu', 'Water Features'] },
+  { cityClass: 'vv-mia', city: 'Miami', venue: 'Brickell Matchday Pergola', placeTag: 'Brickell', venueTag: 'Sky Terrace', description: 'High above Brickell\'s financial district, this sky terrace combines urban sophistication with match-day excitement. Multiple screens, craft mojitos, and a curated cigar selection.', capacity: '110 guests', hours: '4 PM – 2 AM', amenities: ['High-Rise Terrace', 'Match Screens', 'Craft Mojitos', 'Urban Skyline Views'] },
+  { cityClass: 'vv-mia', city: 'Miami', venue: 'South Beach Lounge Pergola', placeTag: 'South Beach', venueTag: 'Beach Club', description: 'The iconic South Beach location with Art Deco-inspired design, ocean breezes, and a vibrant nightlife atmosphere. Features DJ sets, premium rum flights, and beachside cigar service.', capacity: '120 guests', hours: '3 PM – 3 AM', amenities: ['Art Deco Design', 'DJ Sets', 'Rum Flights', 'Beachside Service'] },
+  { cityClass: 'vv-mia', city: 'Miami', venue: 'Design District Pergola', placeTag: 'Design District', venueTag: 'Cocktail Deck', description: 'A design-forward cocktail deck in Miami\'s creative heart. Architectural pergola structures, gallery-quality art installations, and innovative cigar-cocktail pairing menus.', capacity: '70 guests', hours: '5 PM – 1 AM', amenities: ['Art Installations', 'Design-Forward Space', 'Innovative Pairings', 'Gallery Ambiance'] },
+
+  { cityClass: 'vv-sf', city: 'San Francisco', venue: 'Union Square Match Pergola', placeTag: 'Union Square', venueTag: 'Match Lounge', description: 'In the heart of San Francisco\'s shopping district, this match lounge pergola offers heated outdoor seating, Napa wine pairings, and a cozy atmosphere for foggy evening matches.', capacity: '100 guests', hours: '4 PM – 12 AM', amenities: ['Heated Seating', 'Napa Wine Pairings', 'Match Screenings', 'Cozy Atmosphere'] },
+  { cityClass: 'vv-sf', city: 'San Francisco', venue: 'Embarcadero Bay Pergola', placeTag: 'Embarcadero', venueTag: 'Bay View', description: 'Waterfront dining and cigar excellence along the Embarcadero. Bay Bridge views, fresh seafood, and a maritime-inspired pergola design with fire pits and blanket service.', capacity: '90 guests', hours: '4 PM – 12 AM', amenities: ['Bay Bridge Views', 'Fire Pits', 'Blanket Service', 'Seafood Menu'] },
+  { cityClass: 'vv-sf', city: 'San Francisco', venue: 'Nob Hill Skyline Pergola', placeTag: 'Nob Hill', venueTag: 'Skyline Deck', description: 'Perched atop Nob Hill with commanding city views, this classic San Francisco pergola channels old-world elegance with leather seating, aged whisky, and hand-rolled cigars.', capacity: '70 guests', hours: '5 PM – 12 AM', amenities: ['Panoramic City Views', 'Leather Seating', 'Aged Whisky', 'Hand-Rolling Station'] },
+  { cityClass: 'vv-sf', city: 'San Francisco', venue: 'SoMa Club Pergola', placeTag: 'SoMa', venueTag: 'Club Terrace', description: 'A tech-meets-tradition club terrace in SoMa. Industrial-chic design with smart climate control, an app-based ordering system, and a rotating selection of artisan cigars.', capacity: '85 guests', hours: '5 PM – 1 AM', amenities: ['Industrial-Chic Design', 'Smart Climate Control', 'App Ordering', 'Artisan Cigars'] },
+  { cityClass: 'vv-sf', city: 'San Francisco', venue: 'Golden Gate Lounge Pergola', placeTag: 'Marina District', venueTag: 'Signature Lounge', description: 'The signature San Francisco location with Golden Gate Bridge views. A destination lounge featuring California wines, locally-sourced small plates, and sunset cigar ceremonies.', capacity: '75 guests', hours: '4 PM – 11 PM', amenities: ['Golden Gate Views', 'California Wines', 'Small Plates', 'Sunset Ceremonies'] },
+
+  { cityClass: 'vv-bos', city: 'Boston', venue: 'Back Bay Pergola Lounge', placeTag: 'Back Bay', venueTag: 'Lounge Deck', description: 'A refined Back Bay lounge deck surrounded by brownstone architecture. New England charm meets cigar culture with craft cocktails, clam chowder bites, and fireplace seating.', capacity: '90 guests', hours: '5 PM – 12 AM', amenities: ['Brownstone Setting', 'Fireplace Seating', 'Craft Cocktails', 'New England Bites'] },
+  { cityClass: 'vv-bos', city: 'Boston', venue: 'Seaport Match Pergola', placeTag: 'Seaport', venueTag: 'Match Terrace', description: 'Boston\'s newest waterfront district hosts this modern match terrace with harbor views, multiple screens, lobster rolls, and a lively atmosphere for every group-stage match.', capacity: '120 guests', hours: '3 PM – 1 AM', amenities: ['Harbor Views', 'Match Screens', 'Lobster Rolls', 'Lively Atmosphere'] },
+  { cityClass: 'vv-bos', city: 'Boston', venue: 'Long Wharf Harbor Pergola', placeTag: 'Waterfront', venueTag: 'Harbor View', description: 'Directly on Long Wharf with fishing boats and harbor islands as your backdrop. An authentic Boston waterfront experience with maritime décor, oyster bar, and premium cigars.', capacity: '80 guests', hours: '4 PM – 12 AM', amenities: ['Historic Waterfront', 'Oyster Bar', 'Maritime Décor', 'Harbor Islands View'] },
+  { cityClass: 'vv-bos', city: 'Boston', venue: 'Copley Square Club Pergola', placeTag: 'Copley', venueTag: 'Club Pergola', description: 'An exclusive club pergola overlooking Copley Square and the Boston Public Library. Old-world ambiance with leather armchairs, single malts, and a curated cigar vault.', capacity: '65 guests', hours: '5 PM – 12 AM', amenities: ['Copley Square Views', 'Leather Armchairs', 'Single Malts', 'Cigar Vault'] },
 ]

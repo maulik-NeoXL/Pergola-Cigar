@@ -5,9 +5,10 @@ function VenueCard({
   city,
   hotel,
   tags,
+  onClick,
 }) {
   return (
-    <div className={`venue-card ${cityClass}`}>
+    <div className={`venue-card ${cityClass}`} onClick={onClick} style={onClick ? { cursor: 'pointer' } : undefined}>
       <div className="venue-visual" style={{ height: '160px' }}>
         <img
           src={imageSrc}

@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import VenueCard from './cards/VenueCard'
+import CityPergolaModal from './CityPergolaModal'
 import { hostCities } from '../data/venues'
 
+
 function HostCitiesSection() {
+  const [selectedCity, setSelectedCity] = useState(null)
+
   return (
     <div id="gallery">
       <div className="section">
@@ -22,10 +27,18 @@ function HostCitiesSection() {
               city={item.city}
               hotel={item.hotel}
               tags={item.tags}
+              onClick={() => setSelectedCity(item)}
             />
           ))}
         </div>
       </div>
+
+      {selectedCity && (
+        <CityPergolaModal
+          city={selectedCity}
+          onClose={() => setSelectedCity(null)}
+        />
+      )}
     </div>
   )
 }

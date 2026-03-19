@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import PergolaDetailModal from './PergolaDetailModal'
 import { pergolaEntries } from '../data/venues'
+import useScrollReveal from '../hooks/useScrollReveal'
 
 const pergolaImages = [
   '/assets/pergola-1.png',
@@ -13,6 +14,7 @@ const pergolaImages = [
 function InsidePergolaSection() {
   const [selected, setSelected] = useState(null)
   const carouselRef = useRef(null)
+  const sectionRef = useScrollReveal()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const getPerView = useCallback(() => {
@@ -45,7 +47,7 @@ function InsidePergolaSection() {
   }, [currentIndex, scrollToIndex])
 
   return (
-    <div id="venues">
+    <div id="venues" ref={sectionRef}>
       <div className="section">
         <span className="section-tag">Venues</span>
         <h2 className="section-title">Inside the<br /><em>Pergola</em></h2>

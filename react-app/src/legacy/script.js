@@ -336,5 +336,59 @@
             });
         });
 
+        // ── SCROLL REVEAL ──────────────────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealTargets = [
+                '.section-tag', '.section-title', '.section-rule', '.section-intro',
+                '.concept-card', '.cigar-card', '.exp-card', '.pkg-card', '.moment-card',
+                '.venue-card', '.reserve-detail', '.reserve-form',
+                '.snapshot-card', '.footer-top', '.hero-stats',
+            ];
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            revealTargets.forEach((selector) => {
+                document.querySelectorAll(selector).forEach((el) => {
+                    if (!el.closest('.hero')) {
+                        el.classList.add('reveal');
+                        observer.observe(el);
+                    }
+                });
+            });
+
+            // Stagger cards in grids
+            document.querySelectorAll('.concept-grid, .collection-grid, .experience-grid, .packages-grid, .schedule-moments, .venues-grid').forEach((grid) => {
+                if (!grid.closest('.hero')) {
+                    grid.classList.add('reveal-stagger');
+                }
+            });
+        });
+
+        // ── CARD GLOW FOLLOW MOUSE ─────────────────────────────────────────────────
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.venue-card, .concept-card, .cigar-card, .exp-card, .pkg-card, .moment-card');
+            cards.forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', x + 'px');
+                card.style.setProperty('--mouse-y', y + 'px');
+            });
+        });
+
+        // ── NAV SCROLL EFFECT ──────────────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                nav.classList.toggle('scrolled', window.scrollY > 40);
+            }
+        }, { passive: true });
 
     

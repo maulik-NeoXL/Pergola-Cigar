@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import HtmlSection from './components/HtmlSection'
+import NavBar from './components/NavBar'
+import VideoModal from './components/VideoModal'
 import ReserveSection from './components/ReserveSection'
 import HostCitiesSection from './components/HostCitiesSection'
 import InsidePergolaSection from './components/InsidePergolaSection'
@@ -7,7 +9,9 @@ import legacyBodyHtml from './legacy/legacy-body.html?raw'
 
 function App() {
   const [sections, setSections] = useState({})
+  const [videoOpen, setVideoOpen] = useState(false)
   const scriptLoadedRef = useRef(false)
+  const closeVideo = useCallback(() => setVideoOpen(false), [])
 
   useEffect(() => {
     const html = legacyBodyHtml
@@ -51,7 +55,6 @@ function App() {
     if (!Object.keys(sections).length) return
 
     if (!scriptLoadedRef.current) {
-      // Load legacy behavior from src bundle (no public/script.js dependency).
       Promise.resolve(import('./legacy/script.js')).then(() => {
         scriptLoadedRef.current = true
         document.dispatchEvent(new Event('DOMContentLoaded'))
@@ -61,9 +64,20 @@ function App() {
     }
   }, [sections])
 
+  useEffect(() => {
+    function handlePlayClick(e) {
+      if (e.target.closest('#conceptPlayBtn')) {
+        setVideoOpen(true)
+      }
+    }
+    document.addEventListener('click', handlePlayClick, true)
+    return () => document.removeEventListener('click', handlePlayClick, true)
+  }, [])
+
   return (
     <>
       <HtmlSection html={sections.preHero} />
+      <NavBar />
       <HtmlSection html={sections.hero} />
       <HtmlSection html={sections.concept} />
       <HtmlSection html={sections.collection} />
@@ -77,6 +91,7 @@ function App() {
       <HtmlSection html={sections.modal} />
       <HtmlSection html={sections.whatsapp} />
       <HtmlSection html={sections.full} />
+      <VideoModal open={videoOpen} onClose={closeVideo} />
     </>
   )
 }

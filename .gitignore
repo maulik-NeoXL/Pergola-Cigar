@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.DS_Store
+*.mov
+react-app/public/assets/concept-video.mov

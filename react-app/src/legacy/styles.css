@@ -100,11 +100,7 @@
             gap: 0.25rem;
             list-style: none;
             align-items: center;
-            justify-content: center;
-        }
-
-        .nav-links li:last-child {
-            margin-left: auto;
+            justify-content: flex-end;
         }
 
         .nav-links a {

@@ -37,11 +37,8 @@ export default function VideoModal({ open, onClose }) {
             controls
             autoPlay
             playsInline
-          >
-            <source src="/assets/concept-video.mov" type="video/quicktime" />
-            <source src="/assets/concept-video.mov" type="video/mp4" />
-            Your browser does not support this video format.
-          </video>
+            src="https://res.cloudinary.com/dvnlyohtl/video/upload/v1773949088/concept-video_hsdvlb.mp4"
+          />
         </div>
         <div className="video-modal-subtitle">Crescendo × Marriott · World Cup 2026</div>
       </div>

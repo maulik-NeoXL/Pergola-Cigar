@@ -5,7 +5,7 @@ const navItems = [
   { href: '#collection', label: 'Collection' },
   { href: '#experience', label: 'Experience' },
   { href: '#packages', label: 'Packages' },
-  { href: '#venues', label: 'Venues' },
+  { href: '#venues', label: 'Gallery' },
 ]
 
 export default function NavBar() {

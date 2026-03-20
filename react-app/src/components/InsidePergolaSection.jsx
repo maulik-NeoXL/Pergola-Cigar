@@ -1,119 +1,72 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
-import PergolaDetailModal from './PergolaDetailModal'
-import { pergolaEntries } from '../data/venues'
-import useScrollReveal from '../hooks/useScrollReveal'
+import { useRef, useCallback, useState, useEffect } from 'react'
 
-const pergolaImages = [
-  '/assets/pergola-1.png',
-  '/assets/pergola-2.png',
-  '/assets/pergola-3.png',
-  '/assets/pergola-4.png',
-  '/assets/pergola-5.png',
-  '/assets/pergola-6.png',
-  '/assets/pergola-7.png',
-  '/assets/pergola-8.png',
-  '/assets/pergola-9.png',
+const galleryItems = [
+  { image: '/assets/pergola-1.png', label: 'Pergola Lounge' },
+  { image: '/assets/pergola-2.png', label: 'Evening Ambiance' },
+  { image: '/assets/pergola-3.png', label: 'Canopy Detail' },
+  { image: '/assets/pergola-4.png', label: 'Lounge Setting' },
+  { image: '/assets/pergola-5.png', label: 'Guest Experience' },
+  { image: '/assets/pergola-6.png', label: 'Exterior View' },
+  { image: '/assets/pergola-7.png', label: 'Property Integration' },
+  { image: '/assets/pergola-8.png', label: 'Interior Canopy' },
+  { image: '/assets/pergola-9.png', label: 'Aerial Perspective' },
 ]
 
 function InsidePergolaSection() {
-  const [selected, setSelected] = useState(null)
-  const carouselRef = useRef(null)
-  const sectionRef = useScrollReveal()
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const trackRef = useRef(null)
+  const [currentPage, setCurrentPage] = useState(0)
 
-  const getPerView = useCallback(() => {
-    if (typeof window === 'undefined') return 3
-    if (window.innerWidth <= 700) return 1
-    if (window.innerWidth <= 1024) return 2
-    return 3
+  const getPerPage = useCallback(() => {
+    if (typeof window === 'undefined') return 2
+    return window.innerWidth <= 700 ? 1 : 2
   }, [])
 
-  const scrollToIndex = useCallback((idx) => {
-    const el = carouselRef.current
-    if (!el) return
-    const cards = el.querySelectorAll('.venue-card')
-    if (!cards.length) return
-    const perView = getPerView()
-    const maxIdx = Math.max(0, cards.length - perView)
-    let next = idx
-    if (next < 0) next = maxIdx
-    else if (next > maxIdx) next = 0
-    setCurrentIndex(next)
-    const gap = parseFloat(getComputedStyle(el).columnGap || '0') || 0
-    const step = cards[0].getBoundingClientRect().width + gap
-    el.scrollTo({ left: next * step, behavior: 'smooth' })
-  }, [getPerView])
+  const maxPage = useCallback(() => {
+    const perPage = getPerPage()
+    return Math.max(0, Math.ceil(galleryItems.length / perPage) - 1)
+  }, [getPerPage])
 
-  useEffect(() => {
-    const handleResize = () => scrollToIndex(currentIndex)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [currentIndex, scrollToIndex])
+  const goToPage = useCallback((page) => {
+    let next = page
+    const max = maxPage()
+    if (next < 0) next = max
+    else if (next > max) next = 0
+    setCurrentPage(next)
+  }, [maxPage])
+
+  const translateValue = `calc(-${currentPage} * (100% + 1rem))`
 
   return (
-    <div id="venues" ref={sectionRef}>
-      <div className="section">
-        <span className="section-tag">Venues</span>
-        <h2 className="section-title">Inside the<br /><em>Pergola</em></h2>
-        <div className="section-rule"></div>
-        <p className="section-intro">
-          Exclusive pergola settings across all 10 FIFA World Cup 2026 host cities, within
-          Marriott&apos;s finest properties.
-        </p>
+    <div id="venues" className="media-gallery section">
+      <span className="section-tag">Gallery</span>
+      <h2 className="section-title">Media<br /><em>Gallery</em></h2>
+      <div className="section-rule"></div>
 
-        <div className="pergola-carousel" ref={carouselRef}>
-          {pergolaEntries.map((entry, idx) => (
-            <div
-              key={`${entry.cityClass}-${idx}`}
-              className={`venue-card ${entry.cityClass}`}
-              style={{ cursor: 'pointer' }}
-              onClick={() => setSelected({ entry, imgIdx: idx })}
-            >
-              <div className="venue-visual" style={{ height: '160px' }}>
-                <img
-                  src={pergolaImages[idx % pergolaImages.length]}
-                  alt={entry.venue}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s' }}
-                  className={`venue-img-${entry.cityClass}`}
-                />
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(9,9,11,0.2)' }} />
-                <div className="venue-lounge-tag">Pergola Lounge</div>
-              </div>
-              <div className="venue-body">
-                <div className="venue-city">{entry.venue}</div>
-                <div className="venue-hotel">{entry.city}</div>
-                <div className="venue-pills">
-                  <span className="venue-pill">{entry.placeTag}</span>
-                  <span className="venue-pill">{entry.venueTag}</span>
-                </div>
+      <div className="media-gallery-viewport">
+        <div className="media-gallery-track" ref={trackRef} style={{ transform: `translateX(${translateValue})` }}>
+          {galleryItems.map((item, idx) => (
+            <div key={idx} className="media-gallery-item">
+              <div className="media-gallery-img-wrap">
+                <img src={item.image} alt={item.label} className="media-gallery-img" />
+                <div className="media-gallery-overlay" />
+                <span className="media-gallery-label">{item.label}</span>
+                <span className="media-gallery-count">
+                  {String(idx + 1).padStart(2, '0')} / {String(galleryItems.length).padStart(2, '0')}
+                </span>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="pergola-carousel-controls">
-          <button
-            className="pergola-carousel-btn"
-            type="button"
-            aria-label="Previous"
-            onClick={() => scrollToIndex(currentIndex - 1)}
-          >‹</button>
-          <button
-            className="pergola-carousel-btn"
-            type="button"
-            aria-label="Next"
-            onClick={() => scrollToIndex(currentIndex + 1)}
-          >›</button>
-        </div>
       </div>
 
-      {selected && (
-        <PergolaDetailModal
-          entry={selected.entry}
-          imageSrc={pergolaImages[selected.imgIdx % pergolaImages.length]}
-          onClose={() => setSelected(null)}
-        />
-      )}
+      <div className="media-gallery-controls">
+        <button className="media-gallery-btn" onClick={() => goToPage(currentPage - 1)} aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <button className="media-gallery-btn" onClick={() => goToPage(currentPage + 1)} aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
     </div>
   )
 }

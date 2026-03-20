@@ -9,6 +9,10 @@ const pergolaImages = [
   '/assets/pergola-3.png',
   '/assets/pergola-4.png',
   '/assets/pergola-5.png',
+  '/assets/pergola-6.png',
+  '/assets/pergola-7.png',
+  '/assets/pergola-8.png',
+  '/assets/pergola-9.png',
 ]
 
 function InsidePergolaSection() {

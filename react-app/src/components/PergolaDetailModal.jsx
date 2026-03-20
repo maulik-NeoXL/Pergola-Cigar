@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import SkeletonImage from './SkeletonImage'
 
 function PergolaDetailModal({ entry, imageSrc, onClose }) {
   useEffect(() => {
@@ -21,7 +22,7 @@ function PergolaDetailModal({ entry, imageSrc, onClose }) {
         <button className="pd-close" onClick={onClose}>✕</button>
 
         <div className="pd-hero">
-          <img
+          <SkeletonImage
             src={imageSrc}
             alt={entry.venue}
             className="pd-hero-img"

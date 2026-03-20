@@ -1,3 +1,5 @@
+import SkeletonImage from '../SkeletonImage'
+
 function VenueCard({
   cityClass,
   imageSrc,
@@ -10,11 +12,11 @@ function VenueCard({
   return (
     <div className={`venue-card ${cityClass}`} onClick={onClick} style={onClick ? { cursor: 'pointer' } : undefined}>
       <div className="venue-visual" style={{ height: '160px' }}>
-        <img
+        <SkeletonImage
           src={imageSrc}
           alt={imageAlt}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s' }}
           className={`venue-img-${cityClass}`}
+          style={{ width: '100%', height: '100%', borderRadius: 'inherit' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(9,9,11,0.2)' }}></div>
         <div className="venue-lounge-tag">Pergola Lounge</div>

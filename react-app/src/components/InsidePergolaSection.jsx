@@ -1,4 +1,5 @@
-import { useRef, useCallback, useState, useEffect } from 'react'
+import { useRef, useCallback, useState } from 'react'
+import SkeletonImage from './SkeletonImage'
 
 const galleryItems = [
   { image: '/assets/pergola-1.png', label: 'Pergola Lounge' },
@@ -47,7 +48,12 @@ function InsidePergolaSection() {
           {galleryItems.map((item, idx) => (
             <div key={idx} className="media-gallery-item">
               <div className="media-gallery-img-wrap">
-                <img src={item.image} alt={item.label} className="media-gallery-img" />
+                <SkeletonImage
+                  src={item.image}
+                  alt={item.label}
+                  className="media-gallery-img"
+                  style={{ width: '100%', height: '100%', borderRadius: 'inherit' }}
+                />
                 <div className="media-gallery-overlay" />
                 <span className="media-gallery-label">{item.label}</span>
                 <span className="media-gallery-count">

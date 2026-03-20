@@ -1,11 +1,20 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import HtmlSection from './components/HtmlSection'
 import NavBar from './components/NavBar'
-import VideoModal from './components/VideoModal'
-import ReserveSection from './components/ReserveSection'
-import HostCitiesSection from './components/HostCitiesSection'
-import InsidePergolaSection from './components/InsidePergolaSection'
 import legacyBodyHtml from './legacy/legacy-body.html?raw'
+
+const VideoModal = lazy(() => import('./components/VideoModal'))
+const ReserveSection = lazy(() => import('./components/ReserveSection'))
+const HostCitiesSection = lazy(() => import('./components/HostCitiesSection'))
+const InsidePergolaSection = lazy(() => import('./components/InsidePergolaSection'))
+
+function SectionFallback() {
+  return (
+    <div className="section-skeleton">
+      <div className="skeleton-shimmer" />
+    </div>
+  )
+}
 
 function App() {
   const [sections, setSections] = useState({})
@@ -80,18 +89,27 @@ function App() {
       <NavBar />
       <HtmlSection html={sections.hero} />
       <HtmlSection html={sections.concept} />
-      <InsidePergolaSection />
+      <Suspense fallback={<SectionFallback />}>
+        <InsidePergolaSection />
+      </Suspense>
       <HtmlSection html={sections.collection} />
       <HtmlSection html={sections.experience} />
       <HtmlSection html={sections.packages} />
-      {/* <HtmlSection html={sections.schedule} /> */}
-      <HostCitiesSection />
-      <ReserveSection />
+      <Suspense fallback={<SectionFallback />}>
+        <HostCitiesSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <ReserveSection />
+      </Suspense>
       <HtmlSection html={sections.footer} />
       <HtmlSection html={sections.modal} />
       <HtmlSection html={sections.whatsapp} />
       <HtmlSection html={sections.full} />
-      <VideoModal open={videoOpen} onClose={closeVideo} />
+      {videoOpen && (
+        <Suspense fallback={null}>
+          <VideoModal open={videoOpen} onClose={closeVideo} />
+        </Suspense>
+      )}
     </>
   )
 }

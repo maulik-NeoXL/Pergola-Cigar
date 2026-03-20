@@ -25,8 +25,15 @@ export default function NavBar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  function handleNavClick() {
+  function handleNavClick(e) {
+    e.preventDefault()
+    const href = e.currentTarget.getAttribute('href')
+    const target = document.querySelector(href)
     setMenuOpen(false)
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 64
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   return (
@@ -37,12 +44,16 @@ export default function NavBar() {
       </div>
 
       <ul className={`nav-links${menuOpen ? ' open' : ''}`} id="navLinks">
-        {navItems.map((item) => (
-          <li key={item.href}>
+        <li className="mobile-menu-brand">
+          <div className="nav-brand-top">Crescendo <span>×</span> Marriott</div>
+          <div className="nav-brand-sub">World Cup 2026 Pergola Experience</div>
+        </li>
+        {navItems.map((item, i) => (
+          <li key={item.href} style={{ '--item-index': i + 1 }}>
             <a href={item.href} onClick={handleNavClick}>{item.label}</a>
           </li>
         ))}
-        <li>
+        <li style={{ '--item-index': navItems.length + 1 }}>
           <a href="#reserve" className="nav-cta" onClick={handleNavClick}>Reserve</a>
         </li>
       </ul>

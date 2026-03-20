@@ -80,12 +80,12 @@ function App() {
       <NavBar />
       <HtmlSection html={sections.hero} />
       <HtmlSection html={sections.concept} />
+      <InsidePergolaSection />
       <HtmlSection html={sections.collection} />
       <HtmlSection html={sections.experience} />
       <HtmlSection html={sections.packages} />
       {/* <HtmlSection html={sections.schedule} /> */}
       <HostCitiesSection />
-      <InsidePergolaSection />
       <ReserveSection />
       <HtmlSection html={sections.footer} />
       <HtmlSection html={sections.modal} />

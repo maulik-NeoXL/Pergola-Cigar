@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 
 const navItems = [
   { href: '#concept', label: 'Concept' },
+  { href: '#venues', label: 'Gallery' },
   { href: '#collection', label: 'Collection' },
   { href: '#experience', label: 'Experience' },
   { href: '#packages', label: 'Packages' },
-  { href: '#venues', label: 'Gallery' },
 ]
 
 export default function NavBar() {
